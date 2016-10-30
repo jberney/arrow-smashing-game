@@ -6,6 +6,13 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^1.4.1",
+    "electron-compilers": "^4.0.3"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "electron-compile": "^3.3.6",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   }
 }
