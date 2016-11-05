@@ -2,8 +2,8 @@ const React = require('react');
 const {Component} = React;
 const {Link} = require('react-router');
 
-const ListHelper = require('../files/list_helper');
-const PathHelper = require('../files/path_helper');
+const ListHelper = require('../../files/list_helper');
+const PathHelper = require('../../files/path_helper');
 const SongWheel = require('../widgets/song_wheel');
 
 class SelectMusicScreen extends Component {
