@@ -10,5 +10,8 @@ module.exports = {
     },
     getOgg(group, song) {
         return `${songsPath}/${group}/${song}/${song}.ogg`;
+    },
+    getSm(group, song) {
+        return `${songsPath}/${group}/${song}/${song}.sm`;
     }
 }
