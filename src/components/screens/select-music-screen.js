@@ -65,7 +65,7 @@ class SelectMusicScreen extends Component {
                 <audio id="sample" {...audioProps}
                        onPlaying={() => {
                            const audio = document.getElementById('sample');
-                           audio.currentTime > sampleStart || (audio.currentTime = sampleStart);
+                           audio.currentTime >= sampleStart || (audio.currentTime = sampleStart);
                        }}/>
                 }
                 <div><Link to="/">Exit</Link></div>
