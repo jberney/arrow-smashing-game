@@ -5,11 +5,13 @@ const {hashHistory, Router, Route} = require('react-router');
 const TitleScreen = require('../screens/title-screen');
 const SelectStyleScreen = require('../screens/select-style-screen');
 const SelectMusicScreen = require('../screens/select-music-screen');
+const PlayScreen = require('../screens/play-screen');
 
 const COMPONENTS = {
     '/': TitleScreen,
     '/select-style': SelectStyleScreen,
-    '/select-music/:style(/:group(/:song))': SelectMusicScreen
+    '/select-music/:style(/:group(/:song))': SelectMusicScreen,
+    '/play/:style/:group/:song': PlayScreen
 };
 
 class ScreenRouter extends Component {

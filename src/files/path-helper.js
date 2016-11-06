@@ -8,6 +8,9 @@ module.exports = {
             ? `${songsPath}/${group}/${song}/${song}.png`
             : `${songsPath}/${group}/${group}.png`;
     },
+    getBg(group, song) {
+        return `${songsPath}/${group}/${song}/${song}-bg.png`;
+    },
     getOgg(group, song) {
         return `${songsPath}/${group}/${song}/${song}.ogg`;
     },

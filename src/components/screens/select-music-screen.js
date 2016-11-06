@@ -17,7 +17,7 @@ class SelectMusicScreen extends Component {
         const groups = ListHelper.listGroups();
         const selectedGroup = params.group;
 
-        let bannerPath, oggPath, selectedSong, songs, bpm;
+        let bannerPath, oggPath, selectedSong, songs, bpm, sampleStart;
         if (selectedGroup) {
             songs = ListHelper.listSongs(selectedGroup);
             songs.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
@@ -32,6 +32,7 @@ class SelectMusicScreen extends Component {
                 smCache[smPath] = sm;
                 const bpms = sm.BPMS;
                 bpm = Math.round(bpms.split(',').pop().split('=')[1]);
+                sampleStart = +sm.SAMPLESTART;
             }
         }
 
@@ -39,8 +40,8 @@ class SelectMusicScreen extends Component {
             backgroundImage: `url("${bannerPath}")`,
             width: '48%',
             paddingTop: '15%',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
         };
         const audioProps = {autoPlay: true, loop: true, src: oggPath};
         const songWheelProps = {
@@ -59,8 +60,14 @@ class SelectMusicScreen extends Component {
                 <h1>Select Music</h1>
                 <h2>Stage: 1st</h2>
                 <h2>Speed: {bpm ? `${bpm}bpm` : '-'}</h2>
-                {bannerPath && <div style={bannerStyle}></div>}
-                {oggPath && <audio {...audioProps}></audio>}
+                {bannerPath && <div style={bannerStyle}/>}
+                {oggPath &&
+                <audio id="sample" {...audioProps}
+                       onPlaying={() => {
+                           const audio = document.getElementById('sample');
+                           audio.currentTime > sampleStart || (audio.currentTime = sampleStart);
+                       }}/>
+                }
                 <div><Link to="/">Exit</Link></div>
             </div>
         );

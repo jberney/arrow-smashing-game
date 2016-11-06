@@ -16,7 +16,7 @@ class SongWheel extends Component {
                         <li key={song}>
                             {song !== selectedSong
                                 ? <Link to={`/select-music/${style}/${group}/${song}`}>{song}</Link>
-                                : <b>{song}</b>}
+                                : <b><Link to={`/play/${style}/${group}/${song}`}>{song}</Link></b>}
                         </li>
                     ))}
                 </ul>}
