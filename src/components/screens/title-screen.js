@@ -24,15 +24,13 @@ class TitleScreen extends Component {
 
         return (
             <div id="title-screen" style={{display: show ? 'block' : 'none'}}>
-                <div>
-                    <h1 id="title-screen-title">
-                        <span id="title-screen-title-arrow">Arrow</span>
-                        <span id="title-screen-title-smashing">Smashing</span>
-                        <span id="title-screen-title-game">Game</span>
-                    </h1>
-                    <div id="title-screen-press-start">
-                        <Link to="/select-style" className>Press Start</Link>
-                    </div>
+                <h1>
+                    <span id="title-screen-title-arrow">Arrow</span>
+                    <span id="title-screen-title-smashing">Smashing</span>
+                    <span id="title-screen-title-game">Game</span>
+                </h1>
+                <div id="title-screen-press-start">
+                    <Link to="/select-style" className>Press Start</Link>
                 </div>
                 <video id="title-screen-bg"
                        src={video}

@@ -21,11 +21,13 @@ class SelectStyleScreen extends Component {
         const {show, video} = this.state;
         const music = PathHelper.getMusic('_common menu music (loop)');
         return (
-            <div style={{display: show ? 'block' : 'none'}}>
+            <div id="select-style-screen" style={{display: show ? 'block' : 'none'}}>
                 <h1>Select Style</h1>
-                <div><Link to="/select-music/singles">Singles</Link></div>
-                <div><Link to="/select-music/versus">Versus</Link></div>
-                <div><Link to="/select-music/doubles">Doubles</Link></div>
+                <div id="styles">
+                    <div><Link to="/select-music/singles">Singles</Link></div>
+                    <div><Link to="/select-music/versus">Versus</Link></div>
+                    <div><Link to="/select-music/doubles">Doubles</Link></div>
+                </div>
                 <div><Link to="/">Exit</Link></div>
                 <video id="title-screen-bg"
                        src={video}

@@ -21,7 +21,7 @@ html, body {
     z-index: -1000;
 }
 
-#title-screen-title {
+#title-screen h1 {
     color: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
@@ -55,8 +55,8 @@ html, body {
     animation: fade 1s ease-out infinite;
     color: #00ff00;
     font-family: 'Titillium Web';
-    font-weight: 900;
     font-size: 48px;
+    font-weight: 900;
     opactiy: 1;
     text-decoration: none;
     -webkit-text-stroke: 3px black;
@@ -69,4 +69,40 @@ html, body {
     50% {
         opacity: 1
     }
+}
+
+#select-style-screen {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+#select-style-screen h1 {
+    color: white;
+    font-family: 'Titillium Web';
+    font-size: 112px;
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    -webkit-text-stroke: 8px black;
+}
+
+#select-style-screen #styles {
+    align-items: flex-end;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 30%;
+}
+
+#select-style-screen #styles div,
+#select-style-screen #styles a {
+    color: white;
+    flex: 1;
+    font-family: 'Titillium Web';
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    -webkit-text-stroke: 3px black;
 }
