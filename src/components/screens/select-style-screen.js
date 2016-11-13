@@ -4,6 +4,10 @@ const {Link} = require('react-router');
 
 const PathHelper = require('../../files/path-helper');
 
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+}
+
 class SelectStyleScreen extends Component {
     constructor(props) {
         super(props);
@@ -19,16 +23,35 @@ class SelectStyleScreen extends Component {
     }
 
     render() {
+        const {style: selectedStyle} = this.props.params;
         const {video} = this.state;
         const music = PathHelper.getMusic('_common menu music (loop)');
+
+        const styles = ['singles', 'versus', 'doubles']
+            .map(style => {
+                const text = capitalize(style);
+                let href, className;
+
+                if (style === selectedStyle) {
+                    href = `/select-music/${style}`;
+                    className = 'selected';
+                } else {
+                    href = `/select-style/${style}`;
+                    className = '';
+                }
+
+                return (
+                    <Link to={href} className={className} key={style}>
+                        {text}
+                    </Link>
+                );
+            });
 
         return (
             <div id="select-style-screen">
                 <h1>Select Style</h1>
                 <div id="styles">
-                    <div><Link to="/select-music/singles">Singles</Link></div>
-                    <div><Link to="/select-music/versus">Versus</Link></div>
-                    <div><Link to="/select-music/doubles">Doubles</Link></div>
+                    {styles}
                 </div>
                 <video id="video-bg"
                        src={video}

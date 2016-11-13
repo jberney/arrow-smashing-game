@@ -33,7 +33,7 @@ class TitleScreen extends Component {
                     </div>
                 </div>
                 <div id="title-screen-press-start">
-                    <Link to="/select-style" className>Press Start</Link>
+                    <Link to="/select-style/singles" className>Press Start</Link>
                 </div>
                 <video id="video-bg"
                        src={video}

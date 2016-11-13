@@ -9,7 +9,7 @@ const PlayScreen = require('../screens/play-screen');
 
 const COMPONENTS = {
     '/': TitleScreen,
-    '/select-style': SelectStyleScreen,
+    '/select-style/:style': SelectStyleScreen,
     '/select-music/:style(/:group(/:song))': SelectMusicScreen,
     '/play/:style/:group/:song': PlayScreen
 };

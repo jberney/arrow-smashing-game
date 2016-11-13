@@ -34,9 +34,9 @@ html, body {
     display: flex;
     flex: 2;
     font-family: 'Titillium Web';
-    font-size: 280px;
-    text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
-    -webkit-text-stroke: 10px black;
+    font-size: 30vh;
+    text-shadow: 0 0 4vh black;
+    -webkit-text-stroke: 0.8vh black;
 }
 
 #title-screen #title-screen-title div {
@@ -74,11 +74,12 @@ html, body {
     animation: fade 1s ease-out infinite;
     color: #00ff00;
     font-family: 'Titillium Web';
-    font-size: 72px;
+    font-size: 5vh;
     font-weight: 900;
     opactiy: 1;
     text-decoration: none;
-    -webkit-text-stroke: 3px black;
+    text-shadow: 0 0 1vh black;
+    -webkit-text-stroke: 0.2vh black;
 }
 
 @keyframes fadein {
@@ -101,18 +102,18 @@ html, body {
 
 #select-style-screen {
     display: flex;
-    flex-direction: row;
-    height: 100vh;
+    flex-direction: column;
+    height: 95vh;
     opacity: 0;
 }
 
 #select-style-screen h1 {
     color: white;
     font-family: 'Titillium Web';
-    font-size: 112px;
+    font-size: 10vh;
     margin: 0;
     text-align: center;
-    text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    text-shadow: 0 0 0.5vh black;
     -webkit-text-stroke: 8px black;
 }
 
@@ -121,7 +122,6 @@ html, body {
     display: flex;
     flex: 1;
     flex-direction: row;
-    margin-top: 30%;
 }
 
 #select-style-screen #styles div,
@@ -134,4 +134,8 @@ html, body {
     text-align: center;
     text-decoration: none;
     -webkit-text-stroke: 3px black;
+}
+
+#select-style-screen #styles a.selected {
+    animation: fade 1s ease-out infinite;
 }
