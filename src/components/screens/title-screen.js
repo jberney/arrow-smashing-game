@@ -13,32 +13,35 @@ class TitleScreen extends Component {
     }
 
     play() {
-        this.setState({show: true});
-
-        document.getElementById('title-screen-audio').play();
+        document.getElementById('video-bg').play();
+        document.getElementById('title-screen').style.opacity = 1;
+        document.getElementById('title-screen').style.animation = 'fadein 1s';
     }
 
     render() {
-        const {show, video} = this.state;
+        const {video} = this.state;
         const music = PathHelper.getMusic('ScreenTitleMenu music (loop)');
 
         return (
-            <div id="title-screen" style={{display: show ? 'block' : 'none'}}>
-                <h1>
-                    <span id="title-screen-title-arrow">Arrow</span>
-                    <span id="title-screen-title-smashing">Smashing</span>
-                    <span id="title-screen-title-game">Game</span>
-                </h1>
+            <div id="title-screen">
+                <div id="title-screen-title">
+                    <div>
+                        <span id="title-screen-title-arrow">Arrow</span>
+                        <span
+                            id="title-screen-title-smashing">Smashing</span>
+                        <span id="title-screen-title-game">Game</span>
+                    </div>
+                </div>
                 <div id="title-screen-press-start">
                     <Link to="/select-style" className>Press Start</Link>
                 </div>
-                <video id="title-screen-bg"
+                <video id="video-bg"
                        src={video}
-                       onPlay={this.play.bind(this)}
-                       autoPlay loop/>
+                       onCanPlay={this.play.bind(this)}
+                       loop/>
                 <audio id="title-screen-audio"
                        src={music}
-                       loop/>
+                       autoPlay loop/>
             </div>
         );
     }
