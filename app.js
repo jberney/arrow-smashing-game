@@ -1,7 +1,7 @@
 const {app, BrowserWindow} = require('electron');
 
 const props = {
-    backgroundColor: '#223',
+    backgroundColor: '#000',
     fullscreen: true
 };
 
