@@ -1,6 +1,11 @@
 const fs = require('fs');
 
-const songsPath = `${process.env.HOME}/Documents/ArrowSmashingGame/Songs`;
+const asgPath = `${process.env.HOME}/Documents/ArrowSmashingGame`;
+const musicPath = `${asgPath}/Music`;
+const songsPath = `${asgPath}/Songs`;
+const videosPath = `${asgPath}/Videos`;
+
+let videos;
 
 module.exports = {
     getBanner(group, song) {
@@ -16,5 +21,14 @@ module.exports = {
     },
     getSm(group, song) {
         return `${songsPath}/${group}/${song}/${song}.sm`;
+    },
+    getMusic(name) {
+        return `${musicPath}/${name}.ogg`
+    },
+    getRandomVideo() {
+        videos = videos || fs.readdirSync(videosPath)
+                .filter(n => n.match(/\.mp4$/));
+        const name = videos[Math.floor(Math.random() * videos.length)];
+        return `${videosPath}/${name}`;
     }
 }

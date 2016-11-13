@@ -1,7 +1,7 @@
 const {app, BrowserWindow} = require('electron');
 
 app.on('ready', () => {
-    new BrowserWindow({width: 1280, height: 720})
+    new BrowserWindow({backgroundColor: '#000', fullscreen: true})
         .loadURL(`file://${__dirname}/index.html`);
 });
 
